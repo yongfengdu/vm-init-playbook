@@ -1,0 +1,9 @@
+[ubuntu-1504]
+192.168.0.33
+
+[ubuntu-1404]
+
+[vm_all:children]
+ubuntu-1404
+ubuntu-1504
+

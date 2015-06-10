@@ -1,0 +1,15 @@
+---
+- name: apt source mirror
+  copy: src=sources.list.{{ UBUNTU_VERSION }} dest=/etc/apt/sources.list
+
+- name: update apt cache
+  apt: update_cache=yes
+
+- name: install redsocks
+  apt: name=redsocks state=present
+
+- name: proxy.sh
+  copy: src=proxy.sh dest=/bin/proxy.sh owner=root group=root mode=755
+
+- name: redsocks.conf
+  copy: src=redsocks.conf dest=/etc/redsocks.conf owner=root group=root mode=644
